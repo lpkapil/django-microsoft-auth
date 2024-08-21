@@ -10,16 +10,16 @@ if config.MICROSOFT_AUTH_LOGIN_ENABLED:  # pragma: no branch
     from . import views
 
     urlpatterns = [
-        # path(
-        #     "auth-callback/",
-        #     views.AuthenticateCallbackView.as_view(),
-        #     name="auth-callback",
-        # ),
         path(
             "auth-callback/",
-            views.AuthenticateCallbackRedirect.as_view(),
+            views.AuthenticateCallbackView.as_view(),
             name="auth-callback",
         ),
+        # path(
+        #     "auth-callback/",
+        #     views.AuthenticateCallbackRedirect.as_view(),
+        #     name="auth-callback",
+        # ),
         path(
             "from-auth-redirect/",
             views.AuthenticateCallbackRedirect.as_view(),

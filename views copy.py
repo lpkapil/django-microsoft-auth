@@ -152,13 +152,6 @@ class AuthenticateCallbackView(View):
         context = self.get_context_data(**request.POST.dict())
 
         status_code = 200
-
-        if "error" in context["message"]:
-            return HttpResponse(context["message"], status=400)
-        else:
-            return redirect(context.get("next", "/dashboard"))
-        
-
         if "error" in context["message"]:
             status_code = 400
 
